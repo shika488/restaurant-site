@@ -3,12 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="<?php bloginfo('description'); ?>">
     <title><?php bloginfo('name'); ?></title>
-
-    <link href="<?php echo get_theme_file_uri(); ?>/img/" rel="shortcut icon">
-    <link rel="stylesheet" href="<?php echo get_theme_file_uri(); ?>/style.css">
-
-    <script src="https://cdn.tailwindcss.com"></script>
 
     <?php wp_head(); ?>
 </head>
@@ -30,3 +26,5 @@
             ?>
         </nav>
     </header>
+
+    <main class="flex-1">

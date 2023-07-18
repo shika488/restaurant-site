@@ -1,7 +1,7 @@
 <?php get_header();?>
 
-<main class="flex-1">
-ここに写真のスライドを入れる
-</main>
+    <section class="">
+        ここに写真のスライド（メニューの写真）
+    </section>
 
 <?php get_footer(); ?>
