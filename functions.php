@@ -23,7 +23,40 @@ add_theme_support('menus');
 //アイキャッチ画像をON
 add_theme_support('post-thumbnails');
 
-add_action('wp_print_style', 'my_deregister', 100);
-function my_deregister_styles() {
-    wp_deregister_style('contect-form-7');
+
+//---------------------------------------
+//カスタム投稿の追加
+//---------------------------------------
+
+function add_cpt_news() {   // ニュース
+    $labels = [
+        'singular_name' => 'news',
+        'edit_item' => 'news',
+    ];
+    $args = [
+        'label' => 'ニュース',
+        'labels' => $labels,
+        'description' => '',
+        'public' => true,
+        'show_in_rest' => true,
+        'rest_base' => '',
+        'rest_controller_class' => 'WP_REST_Posts_Controller',
+        'has_archive' => true,
+        'delete_with_user' => false,
+        'exclude_from_search' => false,
+        'map_meta_cap' => true,
+        'hierarchical' => true,
+        'rewrite' => ['slug' => 'news', 'with_front' => true],
+        'query_var' => true,
+        'menu_position' => 6,
+        'supports' => [
+            'title',
+            'editor',
+        ],
+    ];
+    register_post_type('news', $args);
+
+    //カテゴリーの追加
+    register_taxonomy_for_object_type('category', 'news');
 }
+add_action('init', 'add_cpt_news');
