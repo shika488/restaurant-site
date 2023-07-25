@@ -23,6 +23,19 @@ add_theme_support('menus');
 //アイキャッチ画像をON
 add_theme_support('post-thumbnails');
 
+//---------------------------------------
+//管理画面の表示を変更（ブログ）
+//---------------------------------------
+function post_has_archive ($args, $post_type) {
+    if ('post' == $post_type) {
+        $args['rewrite'] = true;
+        $args['has_archive'] = 'blog';
+        $args['label'] = 'ブログ';  // 「投稿」→「ブログ」に変更
+    }
+    return $args;
+}
+add_filter('register_post_type_args', 'post_has_archive', 10, 2);
+
 
 //---------------------------------------
 //カスタム投稿の追加
@@ -118,7 +131,7 @@ function my_add_columns_content($column_name, $post_id) {
 add_action( 'manage_menu_posts_custom_column', 'my_add_columns_content', 10, 2 );
 
 
-// /* 管理画面でのソート機能追加 */
+/* 管理画面でのソート機能追加 */
 function add_sort($columns) {
     $columns['stop-sales'] = '販売中止';
     return $columns;
@@ -136,3 +149,10 @@ function add_sort_by_meta($query) {
 }
 add_filter('manage_edit-menu_sortable_columns', 'add_sort');
 add_action('pre_get_posts', 'add_sort_by_meta', 1);
+
+
+/* ブログ１件目 */
+function is_first(){
+    global $wp_query;
+    return ($wp_query->current_post === 0);
+}
