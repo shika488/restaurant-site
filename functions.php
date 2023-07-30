@@ -5,6 +5,12 @@ function my_files(){
     // slick
     wp_enqueue_style('slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
     wp_enqueue_style('stylesheet', get_stylesheet_uri());
+    // google Fonts
+    wp_enqueue_style('google-fonts-poiret-one','https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+    wp_enqueue_style('google-fonts-open-sans','https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+    wp_enqueue_style('google-fonts-zen-kaku-gothic-new','https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400&display=swap');
+    wp_enqueue_style('google-fonts-allura','https://fonts.googleapis.com/css2?family=Allura&display=swap');
+
     // tailwindcss
     wp_enqueue_style('tailwind', get_template_directory_uri().'/dist/output.css');
 
