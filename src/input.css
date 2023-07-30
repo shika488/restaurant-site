@@ -6,4 +6,21 @@
     p {
         @apply my-5;
     }
+
+    .page-head {
+        @apply h-32 md:h-44 flex items-center text-center text-sm;
+    }
+
+    .page-ttl {
+        @apply ml-12 md:ml-16 w-60 tracking-widest relative;
+    }
+
+    .ttl-up {
+        @apply text-7xl font-headline -left-5 absolute;
+    }
+
+    .ttl-down {
+        @apply text-4xl font-light absolute;
+    }
+
 }
