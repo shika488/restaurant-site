@@ -6,6 +6,8 @@ Template Name:お問い合わせ
 
 <?php get_header();?>
 
-<?php echo do_shortcode('[contact-form-7 id="6" title="お問い合わせ"]'); ?>
+    <section class="mx-auto w-[95%] md:w-[90%]">
+            <?php echo do_shortcode('[contact-form-7 id="138" title="Contact"]'); ?>
+    </section>
 
 <?php get_footer(); ?>
