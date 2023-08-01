@@ -38,4 +38,52 @@
     .slide-note {
         @apply m-0 px-3 py-2 md:text-3xl font-bold opacity-80 absolute top-[80%] md:top-[50%] left-[10%];
     }
+
+    form {
+        @apply w-full md:w-[80%] my-0 mx-auto;
+    }
+
+    table {
+        @apply md:w-full md:my-0 md:border border-slate-300;
+    }
+
+    tbody {
+        @apply border border-slate-300;
+    }
+
+    table tr {
+        @apply block md:table-row md:border-t border-slate-300;
+    }
+
+    table th {
+        @apply block md:table-cell md:w-[40%] bg-neutral-100 md:border-r border-slate-300;
+    }
+
+    table td {
+        @apply block md:table-cell border-y md:border-0 border-slate-300;
+    } 
+
+    table th p,
+    table td p {
+        @apply mx-2 md:mx-3 w-full text-left font-light;
+    }
+
+    input,
+    textarea {
+        @apply w-[95%] p-2 border-2 border-slate-300 md:text-lg;
+    }
+
+    strong {
+        @apply p-1 rounded-sm mr-2 bg-rose-400 text-sm text-pink-50;
+    }
+
+    b {
+        @apply p-1 rounded-sm mr-3 bg-cyan-400 text-sm text-cyan-50;
+    }
+
+    input[type="submit"] {
+        @apply my-0 mx-auto block w-[60%] border-2 border-pink-500 rounded-bl 
+            bg-white hover:bg-pink-500 text-pink-500 hover:text-white text-xl font-medium tracking-widest;
+    }
+
 }
