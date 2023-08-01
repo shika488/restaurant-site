@@ -6,4 +6,36 @@
     p {
         @apply my-5;
     }
+
+    .h-nav {
+        @apply border-b-4 rounded-sm block w-0 hover:w-full duration-300 transition-all;
+    }
+
+    .page-head {
+        @apply h-20 md:h-28 flex items-center text-center text-sm opacity-80;
+    }
+
+    .page-ttl {
+        @apply ml-12 md:ml-24 w-60 tracking-widest relative;
+    }
+
+    .ttl-up {
+        @apply text-6xl md:text-7xl font-headline -left-5 absolute;
+    }
+
+    .ttl-down {
+        @apply text-3xl md:text-4xl font-light absolute;
+    }
+
+    .splide__slide.is-active img {
+        @apply delay-0 scale-110;
+    }
+
+    .splide__slide.is-active p {
+        @apply animate-[fadeIn_2s];
+    }
+
+    .slide-note {
+        @apply m-0 px-3 py-2 md:text-3xl font-bold opacity-80 absolute top-[80%] md:top-[50%] left-[10%];
+    }
 }

@@ -1,27 +1,29 @@
 <?php
 
 function my_files(){
-    // CSSファイルの読み込み
-    // slick
-    wp_enqueue_style('slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
+    /* CSSファイルの読み込み */
     wp_enqueue_style('stylesheet', get_stylesheet_uri());
+    // Google Fonts
+    wp_enqueue_style('google-fonts-poiret-one','https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+    wp_enqueue_style('google-fonts-open-sans','https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+    wp_enqueue_style('google-fonts-zen-kaku-gothic-new','https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;700&display=swap');
+    wp_enqueue_style('google-fonts-allura','https://fonts.googleapis.com/css2?family=Allura&display=swap');
+    // splide
+    wp_enqueue_style('splide', get_template_directory_uri().'/splide.min.css');
     // tailwindcss
     wp_enqueue_style('tailwind', get_template_directory_uri().'/dist/output.css');
 
-    // JavaScriptファイルの読み込み
-     // slick
-     // wp_enqueue_script('slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'), '1.8.1', true);
-     // main.js
-     // wp_enqueue_script('main-js', get_template_directory_uri().'/main.js', array('slick'), false, true);
+    /* JavaScriptファイルの読み込み */
+    // splide
+    wp_enqueue_script('splide', get_template_directory_uri() . '/splide.min.js', array(), false, true);
+    wp_enqueue_script('main-js', get_template_directory_uri() . '/main.js', array('splide'), false, true);
 }
 add_action('wp_enqueue_scripts', 'my_files');
 
 
-//メニュー機能をON
-add_theme_support('menus');
-
 //アイキャッチ画像をON
 add_theme_support('post-thumbnails');
+
 
 //---------------------------------------
 //管理画面の表示を変更（ブログ）
