@@ -1,0 +1,8 @@
+# imagesのディレクトリ内は管理しない
+images/
+
+# node_modulesのディレクトリ内は管理しない
+node_modules/
+
+package-lock.json
+package.json
