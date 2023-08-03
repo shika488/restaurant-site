@@ -905,14 +905,14 @@ input[type="submit"]:hover {
   margin-bottom: 0.5rem;
 }
 
-.my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-}
-
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+}
+
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .mb-0 {
@@ -979,6 +979,10 @@ input[type="submit"]:hover {
   display: table;
 }
 
+.table-row {
+  display: table-row;
+}
+
 .grid {
   display: grid;
 }
@@ -999,8 +1003,8 @@ input[type="submit"]:hover {
   height: 14rem;
 }
 
-.h-72 {
-  height: 18rem;
+.h-\[300px\] {
+  height: 300px;
 }
 
 .h-auto {
@@ -1049,6 +1053,10 @@ input[type="submit"]:hover {
 
 .w-\[69px\] {
   width: 69px;
+}
+
+.w-\[90\%\] {
+  width: 90%;
 }
 
 .w-\[95\%\] {
@@ -1689,10 +1697,6 @@ input[type="submit"]:hover {
     height: 16rem;
   }
 
-  .md\:h-\[350px\] {
-    height: 350px;
-  }
-
   .md\:h-\[60\%\] {
     height: 60%;
   }
@@ -1715,10 +1719,6 @@ input[type="submit"]:hover {
 
   .md\:w-\[40px\] {
     width: 40px;
-  }
-
-  .md\:w-\[45\%\] {
-    width: 45%;
   }
 
   .md\:w-\[50\%\] {
@@ -1780,11 +1780,6 @@ input[type="submit"]:hover {
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
-  }
-
-  .md\:text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
   }
 
   .md\:text-lg {
