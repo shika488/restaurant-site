@@ -4,9 +4,11 @@
 
         <?php
         $args = array(
+            'post_status' => 'publish',
             'post_type' => 'news', // 投稿タイプ
             'category__not_in' => 5, // カテゴリーID'5'(今週のランチ)を除外
-            'posts_per_page' => 5 // 表示件数
+            'posts_per_page' => 4, // 表示件数
+            'paged' => get_query_var('paged')
         );
         $new_query = new WP_Query($args);
         ?>
@@ -21,11 +23,17 @@
                         <?php the_title(); ?>
                     </dd>
                 <?php endwhile; ?>
-                <?php wp_reset_postdata(); ?>
             </dl>
-        <?php endif; ?>
+        <?php else: endif; ?>
+
+        <!-- pagenation -->
+        <div class="navigation">
+            <?php if (function_exists('wp_pagenavi')) { wp_pagenavi(array('query'=> $new_query));} ?>
+        </div>
+        <!-- /pagenation -->
+
+        <?php wp_reset_postdata();?>
 
     </section>
-
 
 <?php get_footer(); ?>
