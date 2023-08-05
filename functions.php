@@ -27,6 +27,13 @@ function my_files(){
 add_action('wp_enqueue_scripts', 'my_files');
 
 
+// プラグインのCSSを削除する
+add_action('wp_print_styles', 'my_deregister_styles', 100);
+function my_deregister_styles() {
+    wp_deregister_style('wp-pagenavi');
+}
+
+
 //アイキャッチ画像をON
 add_theme_support('post-thumbnails');
 
@@ -107,7 +114,7 @@ function add_cpt_news() {   // ニュース
         'menu_position' => 6,
         'supports' => [
             'title',
-            'editor',
+            // 'editor',
         ],
     ];
     register_post_type('news', $args);
@@ -116,6 +123,41 @@ function add_cpt_news() {   // ニュース
     register_taxonomy_for_object_type('category', 'news');
 }
 add_action('init', 'add_cpt_news');
+
+
+/* 管理画面での投稿一覧の並びを日付順にする */
+function admin_custom_posttype_order($wp_query) {
+    if( is_admin() ) {
+        $post_type = $wp_query->query['post_type'];
+        if($post_type == 'news') {
+            $wp_query->set('orderby','date'); //並べ替えの基準(日付)
+            $wp_query->set('order','DESC'); //新しい順
+        }
+    }
+}
+add_filter('pre_get_posts', 'admin_custom_posttype_order');
+
+
+function column_posts($query) {
+    // 管理画面・メインクエリに干渉させない
+    if (is_admin() || !$query->is_main_query()) {
+        return;
+    }
+
+    // ブログ一覧ページにて表示件数を5件にする
+    if ($query->is_archive()) {
+        $query->set('posts_per_page', 5);
+        return;
+    }
+}
+add_action('pre_get_posts','column_posts');
+
+
+/* ブログ１件目 */
+function is_first(){
+    global $wp_query;
+    return ($wp_query->current_post === 0);
+}
 
 
 /* 管理画面での表示項目追加 */
@@ -159,8 +201,3 @@ add_filter('manage_edit-menu_sortable_columns', 'add_sort');
 add_action('pre_get_posts', 'add_sort_by_meta', 1);
 
 
-/* ブログ１件目 */
-function is_first(){
-    global $wp_query;
-    return ($wp_query->current_post === 0);
-}

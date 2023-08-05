@@ -1,55 +1,39 @@
 <?php get_header();?>
 
-    <section class="">
-        
-        <div>
-            <h3>お知らせ</h3>
-            <?php
-            $args = array(
-                'post_type' => 'news', // 投稿タイプ
-                'category_name' => 'new-info', // カテゴリ名（スラッグ）
-                'posts_per_page' => 3 // 表示件数
-            );
-            $new_query = new WP_Query($args);
-            ?>
+    <section class="my-5 w-[90%] md:w-[75%] lg:w-[60%]">
 
-            <?php if ($new_query->have_posts()) : ?>
-                <dl>
+        <?php
+        $args = array(
+            'post_status' => 'publish',
+            'post_type' => 'news', // 投稿タイプ
+            'category__not_in' => 5, // カテゴリーID'5'(今週のランチ)を除外
+            'posts_per_page' => 4, // 表示件数
+            'paged' => get_query_var('paged')
+        );
+        $new_query = new WP_Query($args);
+        ?>
+
+        <?php if ($new_query->have_posts()) : ?>
+            <dl class="w-full md:flex flex-wrap items-center">
                 <?php while ($new_query->have_posts()) : $new_query->the_post(); ?>
-                    <a href="<?php the_permalink(); ?>">
-                        <dt><?php the_time('Y.m.d'); ?></dt>
-                        <dd><?php the_title(); ?></dd>
-                    </a>
+                    <dt class="md:w-1/5 pt-6 pb-1 md:py-6 px-4 text-left text-sm lg:text-lg md:border-b">
+                        <?php the_time('Y.m.d'); ?>
+                    </dt>
+                    <dd class="md:w-4/5 pb-6 md:py-6 px-4 text-left text-sm lg:text-lg border-b">
+                        <?php the_title(); ?>
+                    </dd>
                 <?php endwhile; ?>
-                <?php wp_reset_postdata(); ?>
-                </dl>
-            <?php endif; ?>
+            </dl>
+        <?php else: endif; ?>
+
+        <!-- pagenation -->
+        <div class="navigation">
+            <?php if (function_exists('wp_pagenavi')) { wp_pagenavi(array('query'=> $new_query));} ?>
         </div>
-<br>
-<br>
-        <div>
-            <h3>今週のお知らせ</h3>
+        <!-- /pagenation -->
 
-            <?php
-            $args = array(
-                'post_type' => 'news', // 投稿タイプ
-                'category_name' => 'news-this-week', // カテゴリ名（スラッグ）
-                'posts_per_page' => 1 // 表示件数
-            );
-            $new_query = new WP_Query($args);
-            ?>
-
-            <?php if ($new_query->have_posts()) : ?>
-                <?php while ($new_query->have_posts()) : $new_query->the_post(); ?>
-                    <p><?php the_title(); ?></p>
-                <?php endwhile; ?>
-                <?php wp_reset_postdata(); ?>
-            <?php endif; ?>
-
-
-        </div>
+        <?php wp_reset_postdata();?>
 
     </section>
-
 
 <?php get_footer(); ?>

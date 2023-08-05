@@ -105,4 +105,16 @@
     input[type="submit"][disabled] {
         @apply border-slate-300 text-slate-300 hover:bg-white hover:text-slate-300;
     }
+
+    .wp-pagenavi {
+        @apply mt-14 mb-10;
+    }
+
+    .current {
+        @apply mx-2 py-[5.5px] px-[11px] border rounded-full bg-[#5be5d3] text-white text-sm;
+    }
+
+    .wp-pagenavi a {
+        @apply mx-2 py-[5px] px-[11px] border rounded-full hover:bg-[#5be5d3] hover:text-white text-sm;
+    }
 }
