@@ -15,8 +15,14 @@ function my_files(){
 
     /* JavaScriptファイルの読み込み */
     // splide
-    wp_enqueue_script('splide', get_template_directory_uri() . '/splide.min.js', array(), false, true);
-    wp_enqueue_script('main-js', get_template_directory_uri() . '/main.js', array('splide'), false, true);
+    if (is_front_page()) {
+        wp_enqueue_script('splide', get_template_directory_uri() . '/splide.min.js', array(), false, true);
+        wp_enqueue_script('main-js', get_template_directory_uri() . '/main.js', array('splide'), false, true);
+    }
+      // YubinBango
+    if (is_page(11)) {
+        wp_enqueue_script('yubinbango', 'https://yubinbango.github.io/yubinbango/yubinbango.js', array(), false, true);
+    }
 }
 add_action('wp_enqueue_scripts', 'my_files');
 
