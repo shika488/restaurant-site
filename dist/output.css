@@ -974,6 +974,11 @@ input[type="submit"][disabled]:hover {
   margin-bottom: 2rem;
 }
 
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
 .mb-0 {
   margin-bottom: 0px;
 }
@@ -1126,6 +1131,18 @@ input[type="submit"][disabled]:hover {
   width: 100vw;
 }
 
+.w-\[90\%\] {
+  width: 90%;
+}
+
+.w-1\/4 {
+  width: 25%;
+}
+
+.w-3\/4 {
+  width: 75%;
+}
+
 .max-w-screen-2xl {
   max-width: 1536px;
 }
@@ -1218,6 +1235,14 @@ input[type="submit"][disabled]:hover {
 
 .border-b-2 {
   border-bottom-width: 2px;
+}
+
+.border-b {
+  border-bottom-width: 1px;
+}
+
+.border-t {
+  border-top-width: 1px;
 }
 
 .border-cyan-500 {
@@ -1382,6 +1407,14 @@ input[type="submit"][disabled]:hover {
   padding: 1rem;
 }
 
+.p-6 {
+  padding: 1.5rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
+}
+
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -1407,8 +1440,29 @@ input[type="submit"][disabled]:hover {
   padding-bottom: 1.5rem;
 }
 
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .pt-\[75\%\] {
   padding-top: 75%;
+}
+
+.pr-5 {
+  padding-right: 1.25rem;
+}
+
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
+}
+
+.pb-1 {
+  padding-bottom: 0.25rem;
 }
 
 .text-left {
@@ -1417,6 +1471,10 @@ input[type="submit"][disabled]:hover {
 
 .text-center {
   text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .font-body {
@@ -1804,12 +1862,36 @@ input[type="submit"][disabled]:hover {
     width: 90%;
   }
 
+  .md\:w-\[60\%\] {
+    width: 60%;
+  }
+
+  .md\:w-1\/5 {
+    width: 20%;
+  }
+
+  .md\:w-4\/5 {
+    width: 80%;
+  }
+
+  .md\:w-\[80\%\] {
+    width: 80%;
+  }
+
+  .md\:w-\[75\%\] {
+    width: 75%;
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
 
   .md\:gap-6 {
     gap: 1.5rem;
+  }
+
+  .md\:border-b {
+    border-bottom-width: 1px;
   }
 
   .md\:via-transparent {
@@ -1832,6 +1914,11 @@ input[type="submit"][disabled]:hover {
     padding-bottom: 2rem;
   }
 
+  .md\:py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -1849,6 +1936,10 @@ input[type="submit"][disabled]:hover {
 }
 
 @media (min-width: 1024px) {
+  .lg\:flex {
+    display: flex;
+  }
+
   .lg\:h-40 {
     height: 10rem;
   }
@@ -1863,6 +1954,38 @@ input[type="submit"][disabled]:hover {
 
   .lg\:w-\[90\%\] {
     width: 90%;
+  }
+
+  .lg\:w-1\/5 {
+    width: 20%;
+  }
+
+  .lg\:w-4\/5 {
+    width: 80%;
+  }
+
+  .lg\:w-1\/4 {
+    width: 25%;
+  }
+
+  .lg\:w-3\/4 {
+    width: 75%;
+  }
+
+  .lg\:w-\[80\%\] {
+    width: 80%;
+  }
+
+  .lg\:w-\[70\%\] {
+    width: 70%;
+  }
+
+  .lg\:w-\[60\%\] {
+    width: 60%;
+  }
+
+  .lg\:max-w-\[800px\] {
+    max-width: 800px;
   }
 
   .lg\:grid-cols-2 {
@@ -1889,6 +2012,11 @@ input[type="submit"][disabled]:hover {
 
   .lg\:text-xl {
     font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .lg\:text-lg {
+    font-size: 1.125rem;
     line-height: 1.75rem;
   }
 }
