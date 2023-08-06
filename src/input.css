@@ -7,24 +7,33 @@
         @apply my-5;
     }
 
-    .h-nav {
+    .nav {
         @apply border-b-4 rounded-sm block w-0 hover:w-full duration-300 transition-all;
     }
 
+    .h-nav {
+        @apply pb-2 md:p-2 hover:text-[#ff0a91] focus:text-[#ff0a91] relative;
+    }
+
+    .h-nav::after {
+        @apply content-[''] w-[5px] hover:w-full h-[5px] hover:h-[2px] rounded-full bg-[#ff0a91] absolute bottom-0 left-[50%] hover:left-0
+            transition-all duration-300;
+    }
+
     .page-head {
-        @apply h-20 md:h-28 flex items-center text-center text-sm opacity-80;
+        @apply h-32 md:h-48 flex items-end text-sm bg-[#f4efe9];
     }
 
     .page-ttl {
-        @apply ml-12 md:ml-24 w-60 tracking-widest relative;
+        @apply h-24 md:h-[150px] bg-white rounded-tr-full relative;
     }
 
     .ttl-up {
-        @apply text-6xl md:text-7xl font-headline -left-5 absolute;
+        @apply text-[85px] md:text-9xl font-headline text-[#d194f7] absolute left-6 md:left-10;
     }
 
     .ttl-down {
-        @apply text-3xl md:text-4xl font-light absolute;
+        @apply text-4xl md:text-5xl font-light absolute bottom-1 right-8;
     }
 
     .splide__slide.is-active img {
