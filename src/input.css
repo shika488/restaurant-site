@@ -7,10 +7,7 @@
         @apply my-5;
     }
 
-    .nav {
-        @apply border-b-4 rounded-sm block w-0 hover:w-full duration-300 transition-all;
-    }
-
+/* ヘッダーナビ */
     .h-nav {
         @apply pb-2 md:p-2 hover:text-[#ff0a91] focus:text-[#ff0a91] relative;
     }
@@ -20,6 +17,7 @@
             transition-all duration-300;
     }
 
+/* 各ページのヘッダー */
     .page-head {
         @apply h-32 md:h-48 flex items-end text-sm bg-[#f4efe9];
     }
@@ -36,6 +34,7 @@
         @apply text-4xl md:text-5xl font-light absolute bottom-1 right-8;
     }
 
+/* スライダー */
     .splide__slide.is-active img {
         @apply delay-0 scale-110;
     }
@@ -59,7 +58,25 @@
     .right {
         @apply w-3/4 lg:w-4/5 py-3 text-left text-sm lg:text-lg;
     }
+    
+/* タグ */
+    .tag {
+        @apply p-1 bg-[#ecf03c] rounded-sm;
+    }
 
+/* ページネーション */
+    .wp-pagenavi {
+        @apply mt-14 mb-10;
+    }
+
+    .current {
+        @apply mx-2 py-[5.5px] px-[11px] border rounded-full border-[#dfdbd5] bg-[#5be5d3] text-white text-sm;
+    }
+
+    .wp-pagenavi a {
+        @apply mx-2 py-[5px] px-[11px] border rounded-full border-[#dfdbd5] hover:bg-[#5be5d3] hover:text-white text-sm;
+    }
+/* お問い合わせフォーム */
     form {
         @apply w-full lg:w-[75%] my-0 mx-auto;
     }
@@ -115,15 +132,4 @@
         @apply border-slate-300 text-slate-300 hover:bg-white hover:text-slate-300;
     }
 
-    .wp-pagenavi {
-        @apply mt-14 mb-10;
-    }
-
-    .current {
-        @apply mx-2 py-[5.5px] px-[11px] border rounded-full bg-[#5be5d3] text-white text-sm;
-    }
-
-    .wp-pagenavi a {
-        @apply mx-2 py-[5px] px-[11px] border rounded-full hover:bg-[#5be5d3] hover:text-white text-sm;
-    }
 }

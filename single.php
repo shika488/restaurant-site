@@ -1,25 +1,42 @@
 <?php get_header();?>
 
-    <section>
+    <section class="w-[90%] lg:max-w-[840px] mx-auto">
         <?php if (have_posts()): while (have_posts()): the_post(); ?>
-            <div class="w-full bg-gray-100 py-6 sm:py-8 lg:py-12">
-                <div class="w-11/12 md:w-4/6 m-auto max-w-screen-2xl px-4 md:px-8">
-                    <div class="rounded-md text-left bg-white px-10 py-6 md:py-8 lg:py-12">
-                        <p class="mt-0 font-semibold text-gray-500 text-sm">
-                            <?php echo get_post_time('Y-m-d l'); ?>
-                        </p>
-
-                        <h2 class="mb-4 text-xl font-bold text-gray-800 md:mb-6 md:text-2xl">
-                            <?php the_title(); ?>
-                        </h2>
-
-                        <div class="mx-auto max-w-screen-md text-gray-600 md:text-lg">
-                            <?php the_content(); ?>
-                        </div>
-                    </div>
+        <div class="my-8 lg:my-12 w-full text-left flex flex-col">
+            <div class="my-5 flex">
+                <!-- 投稿日 -->
+                <span class="text-left text-sm">
+                    <?php echo get_post_time('Y.m.d l'); ?>
+                </span>
+                <!-- タグ -->
+                <div class="ml-10">
+                    <?php the_tags('<span class="tag">', '</span> <span>', '</span>'); ?>
                 </div>
             </div>
-        <?php endwhile; endif;  ?>
+            <!-- タイトル -->
+            <h3 class="text-xl md:text-3xl font-medium">
+                <?php the_title(); ?>
+            </h3>
+            <!-- アイキャッチ画像 -->
+            <div class="my-4 md:my-6 mx-auto">
+                <?php
+                if (has_post_thumbnail()): the_post_thumbnail();
+                endif; ?>
+            </div>
+            <!-- 本文 -->
+            <div class="mx-auto md:text-lg flex flex-col">
+                <?php the_content(); ?>
+            </div>
+        </div>
+
+        <!-- ページネーション -->
+        <div class="my-8 mx-2 md:flex items-center justify-between lg:text-lg">
+            <div class="my-2 md:w-1/3 hover:text-[#5be5d3] active:text-[#5be5d3] text-left"><?php previous_post_link(); ?></div>
+            <div class="my-2 md:w-1/5 hover:text-[#5be5d3] active:text-[#5be5d3]"><a href="<?php home_url(); ?>/blog">ブログ一覧</a></div>
+            <div class="my-2 md:w-1/3 hover:text-[#5be5d3] active:text-[#5be5d3] text-right"><?php next_post_link(); ?></div>
+        </div>
+
+        <?php endwhile; endif; ?>
     </section>
 
 <?php get_footer(); ?>

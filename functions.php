@@ -6,7 +6,7 @@ function my_files(){
     // Google Fonts
     wp_enqueue_style('google-fonts-poiret-one','https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
     wp_enqueue_style('google-fonts-open-sans','https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
-    wp_enqueue_style('google-fonts-zen-kaku-gothic-new','https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;700&display=swap');
+    wp_enqueue_style('google-fonts-zen-kaku-gothic-new','https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap');
     wp_enqueue_style('google-fonts-allura','https://fonts.googleapis.com/css2?family=Allura&display=swap');
     // splide
     wp_enqueue_style('splide', get_template_directory_uri().'/splide.min.css');
