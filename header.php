@@ -63,9 +63,9 @@
             <?php if(is_post_type_archive('menu') || is_singular('menu')): ?>
                 <div class="page-head">
                     <div class="page-ttl w-[270px] md:w-[420px]">
-                        <h3 class="ttl-up -rotate-[7deg] bottom-10 md:bottom-2">
+                        <span class="ttl-up -rotate-[7deg] bottom-10 md:bottom-2">
                             Menu
-                        </h3>
+                        </span>
                         <h2 class="ttl-down">
                             メニュー
                         </h2>
@@ -74,9 +74,9 @@
             <?php elseif(is_post_type_archive('news') || is_singular('news')): ?>
                 <div class="page-head">
                     <div class="page-ttl w-[250px] md:w-[390px]">
-                        <h3 class="ttl-up -rotate-6 bottom-10 md:bottom-2">
+                        <span class="ttl-up -rotate-6 bottom-10 md:bottom-2">
                             News
-                        </h3>
+                        </span>
                         <h2 class="ttl-down">
                             ニュース
                         </h2>
@@ -85,43 +85,47 @@
             <?php elseif(is_archive() || is_single()): ?>
                 <div class="page-head">
                     <div class="page-ttl w-[240px] md:w-[350px]">
-                        <h3 class="ttl-up -rotate-12 bottom-8 md:bottom-2">
+                        <span class="ttl-up -rotate-12 bottom-8 md:bottom-2">
                             Blog
-                        </h3>
+                        </span>
                         <h2 class="ttl-down">
                             ブログ
                         </h2>
                     </div>
+                </div>
             <?php elseif(is_page(7)): ?>
                 <div class="page-head">
                     <div class="page-ttl w-[290px] md:w-[440px]">
-                        <h3 class="ttl-up -rotate-6 bottom-10 md:bottom-2">
+                        <span class="ttl-up -rotate-6 bottom-10 md:bottom-2">
                             Access
-                        </h3>
+                        </span>
                         <h2 class="ttl-down">
                             アクセス
                         </h2>
                     </div>
+                </div>
             <?php elseif(is_page(9)): ?>
                 <div class="page-head">
                     <div class="page-ttl w-[310px] md:w-[510px]">
-                        <h3 class="ttl-up text-[80px] md:text-[120px] -rotate-[7deg] bottom-10 md:bottom-3">
+                        <span class="ttl-up text-[80px] md:text-[120px] -rotate-[7deg] bottom-10 md:bottom-3">
                             Company
-                        </h3>
+                        </span>
                         <h2 class="ttl-down text-[30px] md:text-[43px] tracking-widest right-10">
                             会社概要
                         </h2>
                     </div>
+                </div>
             <?php elseif(is_page(11)): ?>
                 <div class="page-head">
                     <div class="page-ttl w-[280px] md:w-[420px]">
-                        <h3 class="ttl-up text-[80px] md:text-[120px] -rotate-6 left-4 bottom-9 md:bottom-2">
+                        <span class="ttl-up text-[80px] md:text-[120px] -rotate-6 left-4 bottom-9 md:bottom-2">
                             Contact
-                        </h3>
+                        </span>
                         <h2 class="ttl-down text-[30px] md:text-[43px]">
                             お問い合わせ
                         </h2>
                     </div>
+                </div>
                 <?php endif; ?>
             </div>
         <?php endif; ?>

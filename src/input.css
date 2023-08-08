@@ -9,11 +9,11 @@
 
 /* ヘッダーナビ */
     .h-nav {
-        @apply pb-2 md:p-2 hover:text-[#ff0a91] focus:text-[#ff0a91] relative;
+        @apply pb-2 md:p-2 hover:text-[#ff0a91] active:text-[#ff0a91] relative;
     }
 
     .h-nav::after {
-        @apply content-[''] w-[5px] hover:w-full h-[5px] hover:h-[2px] rounded-full bg-[#ff0a91] absolute bottom-0 left-[50%] hover:left-0
+        @apply content-[''] w-[5px] hover:w-full active:w-full h-[5px] hover:h-[2px] active:h-[2px] rounded-full bg-[#ff0a91] absolute bottom-0 left-[50%] hover:left-0 active:left-0
             transition-all duration-300;
     }
 
@@ -74,7 +74,7 @@
     }
 
     .wp-pagenavi a {
-        @apply mx-2 py-[5px] px-[11px] border rounded-full border-[#dfdbd5] hover:bg-[#5be5d3] hover:text-white text-sm;
+        @apply mx-2 py-[5px] px-[11px] border rounded-full border-[#dfdbd5] hover:bg-[#5be5d3] active:bg-[#5be5d3] hover:text-white active:text-white text-sm;
     }
 /* お問い合わせフォーム */
     form {
@@ -82,23 +82,23 @@
     }
 
     table {
-        @apply md:w-full md:my-0 mx-auto md:border border-slate-300;
+        @apply md:w-full md:my-0 mx-auto md:border border-[#d194f7];
     }
 
     tbody {
-        @apply border border-slate-300;
+        @apply border border-[#d194f7];
     }
 
     table tr {
-        @apply block md:table-row md:border-t border-slate-300;
+        @apply block md:table-row md:border-t border-[#d194f7];
     }
 
     table th {
-        @apply block md:table-cell md:w-[35%] bg-neutral-100 md:border-r border-slate-300;
+        @apply block md:table-cell md:w-[35%] bg-[#f8effd] md:border-r border-[#d194f7];
     }
 
     table td {
-        @apply block md:table-cell border-y md:border-0 border-slate-300;
+        @apply block md:table-cell border-y md:border-0 border-[#d194f7];
     } 
 
     table th p,
@@ -108,7 +108,7 @@
 
     input,
     textarea {
-        @apply w-[95%] p-2 border-2 border-slate-300 lg:text-lg rounded-md;
+        @apply w-[95%] p-2 border-2 border-[#d194f7] lg:text-lg rounded;
     }
 
     input[type="checkbox"] {
@@ -116,20 +116,20 @@
     }
 
     strong {
-        @apply p-1 rounded-sm mr-2 bg-rose-400 text-sm text-pink-50;
+        @apply p-1 rounded-sm mr-2 bg-[#ff0a91] text-sm text-pink-50;
     }
 
     b {
-        @apply p-1 rounded-sm mr-3 bg-cyan-400 text-sm text-cyan-50;
+        @apply p-1 rounded-sm mr-3 bg-[#5be5d3] text-sm text-cyan-50;
     }
 
     input[type="submit"] {
-        @apply my-0 mx-auto block w-[40%] border-2 border-pink-500 rounded-md
-            bg-white hover:bg-pink-500 text-pink-500 hover:text-white text-xl font-medium tracking-widest;
+        @apply my-0 mx-auto block w-[40%] border-2 border-[#ff0a91] rounded-md
+            bg-white hover:bg-[#ff0a91] text-[#ff0a91] hover:text-white text-xl font-medium tracking-widest;
     }
 
     input[type="submit"][disabled] {
-        @apply border-slate-300 text-slate-300 hover:bg-white hover:text-slate-300;
+        @apply border-[#dfdbd5] text-[#dfdbd5] hover:bg-white active:bg-white hover:text-[#dfdbd5] active:text-[##dfdbd5];
     }
 
 }

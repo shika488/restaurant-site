@@ -1,7 +1,7 @@
 <?php get_header();?>
 
     <section class="my-5 mx-auto w-[90%] lg:w-[85%]">
-        <ul class="my-6 flex justify-between flex-wrap md:after:content-[''] md;after:block md:after:w-[30%]">
+        <ul class="my-6 flex justify-between flex-wrap md:after:content-[''] md;after:block md:after:w-[30%] animate-[fadeUp_2s]">
             <!-- article - start -->
             <?php if (have_posts()): while (have_posts()): the_post(); ?>
             <li class="my-5 w-[45%] md:w-[30%] border rounded-lg border-[#f4efe9] hover:bg-[#ecf03c] active:bg-[#ecf03c] drop-shadow-xl">

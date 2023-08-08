@@ -8,7 +8,7 @@ Template Name:アクセス
 
     <section class="w-[97%] lg:w-[90%] mb-5 md:my-5 md:flex justify-between items-center">
 
-        <dl class="md:w-[50%] lg:h-[350px] mb-4 md:mb-0 md:mr-5 flex flex-wrap items-center">
+        <dl class="md:w-[50%] lg:h-[350px] mb-4 md:mb-0 md:mr-5 flex flex-wrap items-center animate-[fadeUp_2s]">
             <dt class="left">住所</dt>
             <dd class="right"><?php echo CFS()->get('address', 9); ?></dd>
             <dt class="left">連絡先</dt>
@@ -22,7 +22,7 @@ Template Name:アクセス
         </dl>
 
         <div class="md:w-[50%]">
-            <div class="w-full h-full relative pt-[75%]"><?php echo CFS()->get('map'); ?></div>
+            <div class="w-full h-full relative pt-[75%] animate-[fadeIn_3s]"><?php echo CFS()->get('map'); ?></div>
         </div>
 
     </section>
