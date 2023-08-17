@@ -51,26 +51,6 @@
         @apply absolute top-0 left-0 w-full h-full;
     }
 
-    .left {
-        @apply w-1/4 lg:w-1/5 pr-5 py-3 text-right text-sm lg:text-lg font-normal;
-    }
-
-    .right {
-        @apply w-3/4 lg:w-4/5 py-3 text-left text-sm lg:text-lg;
-    }
-
-    /* ボタン */
-    /* .button a {
-        @apply relative;
-    }
-
-    .button a::before {
-        @apply content-[''] w-full h-[1px] bg-[#d194f7] absolute top-[-6px] left-0 scale-x-0 hover:scale-x-100;
-    }
-
-    .button a::after {
-        @apply content-[''] w-full h-[1px] bg-[#d194f7] absolute bottom-[-6px] left-0 scale-x-0 hover:scale-x-100;
-    } */
 
     .button {
         @apply py-2 px-3 border-2 rounded-[20px] border-[#04a8eb] hover:bg-[#20b2aa] active:bg-[#20b2aa] hover:text-white active:text-white text-xl;
@@ -87,7 +67,7 @@
     }
 
     .salad::before {
-        @apply font-symbols content-['\e123'];
+        @apply font-symbols content-['\f8be'];
     }
 
     .soup::before {
@@ -133,6 +113,23 @@
 
     .wp-pagenavi a {
         @apply mx-2 py-[5px] px-[11px] border rounded-full border-[#dfdbd5] hover:bg-[#5be5d3] active:bg-[#5be5d3] hover:text-white active:text-white text-sm;
+    }
+
+/* 会社概要 */
+    .left {
+        @apply w-1/4 lg:w-1/5 pr-5 py-3 text-right text-sm lg:text-lg font-normal;
+    }
+
+    .right {
+        @apply w-3/4 lg:w-4/5 py-3 text-left text-sm lg:text-lg;
+    }
+
+    .message::after {
+        @apply ml-2 font-symbols content-['\e123'];
+    }
+
+    .history::before {
+        @apply mr-2 font-symbols content-['\ea40'];
     }
 
 /* お問い合わせフォーム */

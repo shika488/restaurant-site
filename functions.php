@@ -8,6 +8,8 @@ function my_files(){
     wp_enqueue_style('google-fonts-open-sans','https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
     wp_enqueue_style('google-fonts-zen-kaku-gothic-new','https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap');
     wp_enqueue_style('google-fonts-allura','https://fonts.googleapis.com/css2?family=Allura&display=swap');
+    // Material Symbols
+    wp_enqueue_style('material-symbols','https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
     // splide
     wp_enqueue_style('splide', get_template_directory_uri().'/splide.min.css');
     // tailwindcss
@@ -32,6 +34,10 @@ add_action('wp_print_styles', 'my_deregister_styles', 100);
 function my_deregister_styles() {
     wp_deregister_style('wp-pagenavi');
 }
+
+
+//メニュー機能をON
+add_theme_support('menus');
 
 
 //アイキャッチ画像をON
@@ -161,36 +167,51 @@ function is_first(){
 
 
 /* 管理画面での表示項目追加 */
-function add_custom_column($column) {
-    $column['stop-sales'] = '販売中止';
-    return $column;
+function add_custom_columns($columns) {
+    $columns['stop-sales'] = '提供中止';
+    $columns['reason'] = '提供中止の理由';
+    $columns['display-order'] = '表示順';
+    return $columns;
 }
-add_filter( 'manage_edit-menu_columns', 'add_custom_column' );
+add_filter( 'manage_edit-menu_columns', 'add_custom_columns' );
 
-function my_add_columns_content($column_name, $post_id) {
-    if( $column_name == 'stop-sales' ) {
+function add_columns_content($column_name, $post_id) {
+    if ($column_name == 'stop-sales') {
         $metas = CFS()->get('stop-sales', $post_id);
     }
 
+    if ($column_name == 'reason') {
+        $metas = CFS()->get('reason', $post_id);
+    }
+
+    if ($column_name == 'display-order') {
+        $metas = CFS()->get('display-order', $post_id);
+    }
+
     if ( isset($metas) && $metas ) {
-        echo '販売中止';
+        if ($column_name == 'stop-sales' && $metas == 1 ) {
+            echo ('提供中止');
+        } else {
+            echo esc_attr($metas);
+        }
     } else {
         echo '-';
     }
 }
-add_action( 'manage_menu_posts_custom_column', 'my_add_columns_content', 10, 2 );
+add_action( 'manage_menu_posts_custom_column', 'add_columns_content', 10, 2 );
 
 
 /* 管理画面でのソート機能追加 */
 function add_sort($columns) {
-    $columns['stop-sales'] = '販売中止';
+    $columns['stop-sales'] = '提供中止';
+    $columns['reason'] = '提供中止の理由';
     return $columns;
 }
 
 function add_sort_by_meta($query) {
     if ($query->is_main_query() && ( $orderby = $query->get('orderby'))) {
         switch($orderby) {
-        case '販売中止':
+        case '提供中止':
             $query->set('meta_key', 'stop-sales');
             $query->set('orderby', 'meta_value_num');
             break;
