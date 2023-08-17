@@ -58,10 +58,68 @@
     .right {
         @apply w-3/4 lg:w-4/5 py-3 text-left text-sm lg:text-lg;
     }
-    
+
+    /* ボタン */
+    /* .button a {
+        @apply relative;
+    }
+
+    .button a::before {
+        @apply content-[''] w-full h-[1px] bg-[#d194f7] absolute top-[-6px] left-0 scale-x-0 hover:scale-x-100;
+    }
+
+    .button a::after {
+        @apply content-[''] w-full h-[1px] bg-[#d194f7] absolute bottom-[-6px] left-0 scale-x-0 hover:scale-x-100;
+    } */
+
+    .button {
+        @apply py-2 px-3 border-2 rounded-[20px] border-[#04a8eb] hover:bg-[#20b2aa] active:bg-[#20b2aa] hover:text-white active:text-white text-xl;
+    }
+
 /* タグ */
     .tag {
         @apply p-1 bg-[#ecf03c] rounded-sm;
+    }
+
+/* カテゴリー */
+    .limited-time::before {
+        @apply font-symbols content-['\e56c'];
+    }
+
+    .salad::before {
+        @apply font-symbols content-['\e123'];
+    }
+
+    .soup::before {
+        @apply font-symbols content-['\e7d3'];
+    }
+
+    .pasta::before {
+        @apply font-symbols content-['\ea57'];
+    }
+
+    .pizza::before {
+        @apply font-symbols content-['\e552'];
+    }
+
+    .dolce::before {
+        @apply font-symbols content-['\ea69'];
+    }
+
+    .alcohol::before {
+        @apply font-symbols content-['\ea60'];
+    }
+
+    .soft-drink::before {
+        @apply font-symbols content-['\f6d6'];
+    }
+
+    .coffee::before {
+        @apply font-symbols content-['\e541'];
+    }
+
+    .tea::before {
+        @apply font-symbols content-['\ea1b'];
     }
 
 /* ページネーション */
@@ -76,6 +134,7 @@
     .wp-pagenavi a {
         @apply mx-2 py-[5px] px-[11px] border rounded-full border-[#dfdbd5] hover:bg-[#5be5d3] active:bg-[#5be5d3] hover:text-white active:text-white text-sm;
     }
+
 /* お問い合わせフォーム */
     form {
         @apply w-full lg:w-[75%] my-0 mx-auto;
