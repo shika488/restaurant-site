@@ -64,6 +64,9 @@ module.exports = {
         headline: [
           'Allura',
           'cursive'
+        ],
+        symbols: [
+          'Material Symbols Rounded',
         ]
       }
     },
