@@ -1,6 +1,6 @@
 'use strict';
 
-const options = {
+const my_splide = new Splide('.splide', {
     arrows: false, // 矢印ボタンを非表示
     pagination: false, // ページネーションを非表示
     autoplay: true, // 自動再生
@@ -9,8 +9,4 @@ const options = {
     pauseOnHover: false, // カーソルが乗ってもスクロールを停止させない
     interval: 5500, // 自動再生の間隔
     speed: 2000, // スライダーの移動時間
-}
-
-const my_splide = new Splide('.splide', options);
-
-my_splide.mount();
+}).mount();

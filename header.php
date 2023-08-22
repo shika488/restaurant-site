@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php bloginfo('description'); ?>">
     <title><?php bloginfo('name'); ?></title>
+    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.svg">
     <?php wp_head(); ?>
 </head>
 <body class="min-h-screen flex flex-col items-center text-center font-body font-light">
-    <header class="w-full">
+    <header class="w-full h-full">
         <div class="md:mt-0 px-2 md:px-0 w-full h-28 md:h-32 lg:flex justify-around items-center bg-[#ecf03c]">
             <h1 class="py-1 lg:py-0 font-title text-[40px] md:text-[45px] lg:text-[55px] tracking-widest">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
@@ -16,8 +17,14 @@
                 </a>
             </h1>
 
-            <nav class="mb-0 mx-auto lg:mx-0 lg:w-1/2 text-sm md:text-xl lg:text-2xl">
-                <ul class="mx-auto w-[95%] lg:w-full flex justify-between">
+            <nav class="mb-0 mx-auto lg:mx-0 lg:w-1/2 text-sm md:text-xl">
+                <ul class="w-full flex justify-between">
+                    <li>
+                        <a class="h-nav"
+                            href="<?php echo esc_url(home_url('/')); ?>">
+                            Home
+                        </a>
+                    </li>
                     <li>
                         <a class="h-nav"
                             href="<?php home_url(); ?>/menu">
@@ -59,6 +66,7 @@
         </div>
 
         <?php if (is_front_page()): ?>
+            <?php get_template_part('sec', 'slider'); ?>
         <?php else: ?>
             <?php if(is_post_type_archive('menu') || is_singular('menu')): ?>
                 <div class="page-head">
@@ -131,4 +139,4 @@
         <?php endif; ?>
     </header>
 
-    <main class="flex-1 w-screen flex flex-col items-center">
+    <main class="flex-1 w-full flex flex-col items-center bg-white text-gray-800">
