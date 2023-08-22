@@ -14,17 +14,18 @@
                     <div class="flex flex-1 flex-col p-3 md:p-6">
                         <?php if (is_first()): ?>
                             <div class="mb-3 text-left lg:flex">
+                                <!-- 投稿日 -->
                                 <span class="mr-6 text-left text-sm">
-                                    <?php echo get_post_time('Y-m-d l'); ?>
+                                    <?php echo get_post_time('Y.m.d l'); ?>
                                 </span>
-                                <span class="mr-4 w-12 inline-block py-1 px-2 rounded-sm font-bold text-center text-sm bg-[#ff0a91] text-white">
+                                <span class="mr-4 w-12 inline-block py-1 px-2 rounded-sm font-bold text-center text-sm bg-[#ff4337] text-white">
                                     NEW
                                 </span>
                             </div>
                         <?php else: ?>
                             <!-- 投稿日 -->
                             <span class="mb-4 text-left text-sm">
-                                <?php echo get_post_time('Y-m-d l'); ?>
+                                <?php echo get_post_time('Y.m.d l'); ?>
                             </span>
                         <?php endif; ?>
                         <!-- タイトル -->
