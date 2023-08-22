@@ -1,9 +1,9 @@
 <?php get_header();?>
 
-    <section class="mx-auto">
+    <section class="w-[90%] mx-auto">
         <div class="bg-white py-6 sm:py-8 lg:py-12 animate-[fadeUp_2s]">
-            <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-                    <h2 class="mb-8 pb-2 text-center text-2xl font-bold text-gray-800 lg:text-3xl border-b-2 border-[#009100] inline-block">
+            <div class="mx-auto max-w-screen-2xl">
+                    <h2 class="mb-8 pb-2 text-center text-2xl font-bold text-gray-800 lg:text-3xl border-b-2 border-[#20b2aa] inline-block">
                         期間限定メニュー
                     </h2>
 
@@ -48,7 +48,7 @@
 
             <div class="mx-auto max-w-screen-2xl md:px-8">
                 <div class="my-10 py-6 bg-[#f3efe8]">
-                    <h2 class="mb-6 pb-2 text-center text-2xl font-bold text-gray-800 lg:text-3xl border-b-2 border-[#FF4337] inline-block">
+                    <h2 class="mb-6 pb-2 text-center text-2xl font-bold text-gray-800 lg:text-3xl border-b-2 border-[#ff4337] inline-block">
                         フードメニュー
                     </h2>
                     <?php
@@ -75,7 +75,7 @@
                     $new_query = new WP_Query($args);
                     ?>
 
-                    <div class="mt-3 mb-8 mx-auto w-full lg:w-3/4 text-left">
+                    <div class="mt-3 mb-8 mx-auto w-[85%] text-left">
                         <h3 class="mb-2 p-2 text-lg font-bold text-gray-800 lg:text-xl border-l-4 border-b-2 border-[#FF4337]">
                             <?php echo $menu_name; ?>
                         </h3>
@@ -84,9 +84,9 @@
                         <?php if ($new_query->have_posts()): while ($new_query->have_posts()) : $new_query->the_post(); ?>
                             <?php if (!(get_post_meta($post->ID, 'stop-sales', true))): ?>
                                 <li>
-                                    <a href="<?php the_permalink(); ?>" class="px-4 rounded-lg hover:bg-[#dfdbd5] active:bg-[#dfdbd5] flex justify-between">
-                                        <p class="my-1 md:text-lg"><?php echo CFS()->get('name'); ?></p>
-                                        <p class="ml-8 my-1 md:text-lg"><?php echo CFS()->get('price').'円(税込)'; ?></p>
+                                    <a href="<?php the_permalink(); ?>" class="px-4 md:px-8 rounded-lg hover:bg-[#dfdbd5] active:bg-[#dfdbd5] flex justify-between items-center">
+                                        <p class="my-1 text-base md:text-lg font-normal"><?php echo CFS()->get('name'); ?></p>
+                                        <p class="ml-8 my-1 text-xs md:text-sm"><?php echo CFS()->get('price').'円(税込)'; ?></p>
                                     </a>
                                 </li>
                             <?php else: endif; ?>
@@ -99,7 +99,7 @@
                 </div>
 
                 <div class="mt-14">
-                    <h2 class="mb-6 pb-2 text-center text-2xl font-bold text-gray-800 lg:text-3xl border-b-2 border-[#2e8b57] inline-block">
+                    <h2 class="mb-6 pb-2 text-center text-2xl font-bold text-gray-800 lg:text-3xl border-b-2 border-[#20b2aa] inline-block">
                         ドリンクメニュー
                     </h2>
                     <?php
@@ -126,8 +126,8 @@
                     $new_query = new WP_Query($args);
                     ?>
 
-                    <div class="mt-3 mb-8 mx-auto w-[90%] md:w-3/4 text-left">
-                        <h3 class="mb-2 p-2 text-lg font-bold text-gray-800 lg:text-xl border-l-4 border-b-2 border-[#2e8b57] rounded-sm">
+                    <div class="mt-3 mb-8 mx-auto w-[90%] text-left">
+                        <h3 class="mb-2 p-2 text-xl font-bold text-gray-800 lg:text-xl border-l-4 border-b-2 border-[#20b2aa] rounded-sm">
                             <?php echo $menu_name; ?>
                         </h3>
 
@@ -136,9 +136,9 @@
                             <?php while ($new_query->have_posts()) : $new_query->the_post(); ?>
                                 <?php if (!(get_post_meta($post->ID, 'stop-sales', true))): ?>
                                     <li>
-                                        <a href="<?php the_permalink(); ?>" class="px-4 rounded-lg hover:bg-[#dfdbd5] active:bg-[#dfdbd5] flex justify-between">
-                                            <p class="my-1 md:text-lg"><?php echo CFS()->get('name'); ?></p>
-                                            <p class="ml-8 my-1 md:text-lg"><?php echo CFS()->get('price').'円(税込)'; ?></p>
+                                        <a href="<?php the_permalink(); ?>" class="px-4 md:px-10 rounded-lg hover:bg-[#dfdbd5] active:bg-[#dfdbd5] flex justify-between items-center">
+                                            <p class="my-1 text-lg font-normal"><?php echo CFS()->get('name'); ?></p>
+                                            <p class="ml-8 my-1 text-sm"><?php echo CFS()->get('price').'円(税込)'; ?></p>
                                         </a>
                                     </li>
                                 <?php else: endif; ?>
