@@ -6,35 +6,32 @@ Template Name:会社概要
 
 <?php get_header();?>
 
-    <section class="w-[90%] my-8 animate-[fadeUp_2s]">
-
-        <div class="mx-auto md:flex justify-between rounded-lg">
-            <dl class="p-4 w-full md:w-7/12 flex flex-wrap items-center bg-[#f4efe9] rounded-lg">
-                <dt class="left w-2/5 pr-8">会社名</dt>
-                <dd class="right w-3/5"><?php echo CFS()->get('name'); ?></dd>
-                <dt class="left w-2/5 pr-8">設立</dt>
-                <dd class="right w-3/5"><?php echo CFS()->get('found'); ?></dd>
-                <dt class="left w-2/5 pr-8">代表者</dt>
-                <dd class="right w-3/5"><?php echo CFS()->get('CEO'); ?></dd>
-                <dt class="left w-2/5 pr-8">事業内容</dt>
-                <dd class="right w-3/5"><?php echo CFS()->get('business-details'); ?></dd>
-                <dt class="left w-2/5 pr-8">所在地</dt>
-                <dd class="right w-3/5"><?php echo CFS()->get('address'); ?></dd>
-                <dt class="left w-2/5 pr-8">連絡先</dt>
-                <dd class="right w-3/5"><?php echo CFS()->get('tel'); ?></dd>
+    <section class="w-[90%] md:w-full my-8 animate-[fadeUp_2s]">
+        <div class="mt-4 md:mt-8 md:h-[480px] lg:h-[550px] rounded-lg md:relative">
+            <dl class="p-4 md:ml-10 w-full md:w-1/2 flex flex-wrap items-center bg-[#f4efe9] rounded-lg">
+                <dt class="left pr-8 py-4 w-1/3">会社名</dt>
+                <dd class="right py-4 w-2/3"><?php echo CFS()->get('name'); ?></dd>
+                <dt class="left pr-8 py-4 w-1/3">設立</dt>
+                <dd class="right py-4 w-2/3"><?php echo CFS()->get('found'); ?></dd>
+                <dt class="left pr-8 py-4 w-1/3">代表者</dt>
+                <dd class="right py-4 w-2/3"><?php echo CFS()->get('CEO'); ?></dd>
+                <dt class="left pr-8 py-4 w-1/3">事業内容</dt>
+                <dd class="right py-4 w-2/3"><?php echo CFS()->get('business-details'); ?></dd>
+                <dt class="left pr-8 py-4 w-1/3">所在地</dt>
+                <dd class="right py-4 w-2/3"><?php echo CFS()->get('address'); ?></dd>
+                <dt class="left pr-8 py-4 w-1/3">連絡先</dt>
+                <dd class="right py-4 w-2/3"><?php echo CFS()->get('tel'); ?></dd>
             </dl>
 
-            <div>
-                <img class="w-full h-[300px] md:w-8/12 md:h-auto rounded-lg" src="<?php echo get_template_directory_uri(); ?>/images/company.jpg" alt="会社の写真">
-            </div>
+            <img class="w-full md:w-[40%] h-80 md:h-3/4 object-cover rounded-lg md:absolute top-[20%] left-1/2" src="<?php echo get_template_directory_uri(); ?>/images/company.jpg" alt="会社の写真">
         </div>
 
-        <div class="mt-10 md:mt-20 md:flex justify-between items-center">
-            <div class="mx-auto w-5/12">
-                <img class="mx-auto w-10/12 rounded-full" src="<?php echo get_template_directory_uri(); ?>/images/profile.jpg" alt="代表の写真">
-                <p>代表取締社長　しか</p>
+        <div class="mt-14 md:w-[95%] md:flex justify-between items-center">
+            <div class="mx-auto w-full md:w-5/12">
+                <img class="mx-auto w-1/2 md:w-2/3 rounded-full" src="<?php echo get_template_directory_uri(); ?>/images/profile.jpg" alt="代表の写真">
+                <p>代表取締役社長　しか</p>
             </div>
-            <div class="py-2 px-10 w-full md:w-7/12 bg-[#f4efe9] rounded-lg">
+            <div class="py-2 px-6 md:px-10 w-full md:w-7/12 bg-[#f4efe9] rounded-lg">
                 <h3 class="my-6 px-4 text-2xl font-bold border-x-2 border-[#d194f7] inline-block message">代表メッセージ</h3>
                 <div class="text-left">
                     <h4 class="p-1 text-lg font-bold border-b-2 border-[#d194f7] inline-block">忙しいあなたを支えたい</h4>
