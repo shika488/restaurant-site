@@ -9,12 +9,21 @@
 
 /* ヘッダーナビ */
     .h-nav {
-        @apply pb-2 md:p-2 hover:text-[#ff0a91] active:text-[#ff0a91] relative;
+        @apply pb-2 md:px-4 lg:p-2 hover:text-[#ff4337] active:text-[#ff4337] relative;
     }
 
     .h-nav::after {
-        @apply content-[''] w-[5px] hover:w-full active:w-full h-[5px] hover:h-[2px] active:h-[2px] rounded-full bg-[#ff0a91] absolute bottom-0 left-[50%] hover:left-0 active:left-0
+        @apply content-[''] w-[5px] hover:w-full active:w-full h-[5px] hover:h-[2px] active:h-[2px] rounded-full bg-[#ff4337] absolute bottom-0 left-[50%] hover:left-0 active:left-0
             transition-all duration-300;
+    }
+
+/* フッターナビ */
+    .f-nav {
+        @apply mx-4 pb-1 hover:border-b;
+    }
+
+    .partition {
+        @apply border-r border-white my-2;
     }
 
 /* 各ページのヘッダー */
@@ -51,9 +60,13 @@
         @apply absolute top-0 left-0 w-full h-full;
     }
 
+/* リンク */
+    .link {
+        @apply pl-6 pr-4 py-2 text-lg font-bold border-t-2 border-b-2 border-[#20b2aa] relative flex;
+    }
 
-    .button {
-        @apply py-2 px-3 border-2 rounded-[20px] border-[#04a8eb] hover:bg-[#20b2aa] active:bg-[#20b2aa] hover:text-white active:text-white text-xl;
+    .link::after {
+        @apply font-symbols content-['\e5e1'] ml-2 hover:animate-[bounceRight_.8s_ease-in-out_infinite];
     }
 
 /* タグ */
@@ -108,14 +121,14 @@
     }
 
     .current {
-        @apply mx-2 py-[5.5px] px-[11px] border rounded-full border-[#dfdbd5] bg-[#5be5d3] text-white text-sm;
+        @apply mx-2 py-[5.5px] px-[11px] border rounded-full border-[#dfdbd5] bg-[#20b2aa] text-white text-sm;
     }
 
     .wp-pagenavi a {
-        @apply mx-2 py-[5px] px-[11px] border rounded-full border-[#dfdbd5] hover:bg-[#5be5d3] active:bg-[#5be5d3] hover:text-white active:text-white text-sm;
+        @apply mx-2 py-[5px] px-[11px] border rounded-full border-[#dfdbd5] hover:bg-[#20b2aa] active:bg-[#20b2aa] hover:text-white active:text-white text-sm;
     }
 
-/* 会社概要 */
+/* アクセス */
     .left {
         @apply w-1/4 lg:w-1/5 pr-5 py-3 text-right text-sm lg:text-lg font-normal;
     }
@@ -124,6 +137,7 @@
         @apply w-3/4 lg:w-4/5 py-3 text-left text-sm lg:text-lg;
     }
 
+/* 会社概要 */
     .message::after {
         @apply ml-2 font-symbols content-['\e123'];
     }
@@ -172,20 +186,15 @@
     }
 
     strong {
-        @apply p-1 rounded-sm mr-2 bg-[#ff0a91] text-sm text-pink-50;
+        @apply p-1 rounded-sm mr-2 bg-[#ff4337] text-sm text-pink-50;
     }
 
     b {
-        @apply p-1 rounded-sm mr-3 bg-[#5be5d3] text-sm text-cyan-50;
+        @apply p-1 rounded-sm mr-3 bg-[#20b2aa] text-sm text-cyan-50;
     }
 
     input[type="submit"] {
-        @apply my-0 mx-auto block w-[40%] border-2 border-[#ff0a91] rounded-md
-            bg-white hover:bg-[#ff0a91] text-[#ff0a91] hover:text-white text-xl font-medium tracking-widest;
+        @apply my-0 mx-auto block w-[40%] border-2 border-[#20b2aa] rounded-[20px]
+            bg-[#20b2aa] hover:bg-white text-white hover:text-[#20b2aa] text-xl font-medium tracking-widest;
     }
-
-    input[type="submit"][disabled] {
-        @apply border-[#dfdbd5] text-[#dfdbd5] hover:bg-white active:bg-white hover:text-[#dfdbd5] active:text-[##dfdbd5];
-    }
-
 }
