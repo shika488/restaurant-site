@@ -8,28 +8,6 @@ module.exports = {
       },
 
       keyframes: {
-        fadeLeft: {
-          'from': { 
-            opacity: 0,
-            transform: 'translateX(8rem)',
-          },
-          'to': {
-            opacity: 1,
-            transform: 'translateX(0)',
-          }
-        },
-
-        fadeRight: {
-          'from': { 
-            opacity: 0,
-            transform: 'translateX(0)',
-          },
-          'to': {
-            opacity: 1,
-            transform: 'translateX(1rem)',
-          }
-        },
-
         fadeUp: {
           'from': {
             opacity: 0,
@@ -40,15 +18,17 @@ module.exports = {
             transform: 'translateY(0)',
           }
         },
-
-        fadeIn: {
-          'from': {
-            opacity: 0,
+        bounceRight: {
+          '0%': {
+            transform: 'translateX(0)',
           },
-          'to': {
-            opacity: 1,
-          }
-        }
+          '50%': {
+            transform: 'translateX(25%)',
+          },
+          '100%': {
+            transform: 'translateX(0)',
+          },
+        },
       },
 
       fontFamily: {
