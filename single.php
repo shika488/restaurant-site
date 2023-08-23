@@ -31,9 +31,9 @@
 
         <!-- ページネーション -->
         <div class="my-8 mx-2 md:flex items-center justify-between lg:text-lg">
-            <div class="my-2 md:w-1/3 hover:text-[#04a8eb] active:text-[#04a8eb] text-left"><?php previous_post_link(); ?></div>
-            <div class="my-2 md:w-1/5 hover:text-[#04a8eb] active:text-[#04a8eb]"><a href="<?php home_url(); ?>/blog">ブログ一覧</a></div>
-            <div class="my-2 md:w-1/3 hover:text-[#04a8eb] active:text-[#04a8eb] text-right"><?php next_post_link(); ?></div>
+            <div class="my-2 md:w-1/3 hover:text-[#20b2aa] active:text-[#20b2aa] text-left"><?php previous_post_link(); ?></div>
+            <div class="my-2 md:w-1/5 hover:text-[#20b2aa] active:text-[#20b2aa]"><a href="<?php home_url(); ?>/blog">ブログ一覧</a></div>
+            <div class="my-2 md:w-1/3 hover:text-[#20b2aa] active:text-[#20b2aa] text-right"><?php next_post_link(); ?></div>
         </div>
 
         <?php endwhile; endif; ?>

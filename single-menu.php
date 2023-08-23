@@ -40,7 +40,7 @@
         </div>
 
         <div class="my-10 mx-auto md:w-1/5">
-            <a class="button" href="<?php home_url(); ?>/menu">メニュー一覧</a>
+            <a class="hover:text-[#20b2aa] active:text-[#20b2aa]" href="<?php home_url(); ?>/menu">メニュー一覧</a>
         </div>
 
         <?php endwhile; endif;?>
