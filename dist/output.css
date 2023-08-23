@@ -1367,12 +1367,12 @@ input[type="submit"]:hover {
   height: 20rem;
 }
 
-.h-full {
-  height: 100%;
-}
-
 .h-\[calc\(100vh-112px\)\] {
   height: calc(100vh - 112px);
+}
+
+.h-full {
+  height: 100%;
 }
 
 .min-h-screen {
@@ -1933,12 +1933,12 @@ input[type="submit"]:hover {
   transition-duration: 200ms;
 }
 
-.duration-300 {
-  transition-duration: 300ms;
-}
-
 .duration-2000 {
   transition-duration: 2000ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
 }
 
 .ease-out {
@@ -1971,6 +1971,11 @@ input[type="submit"]:hover {
   color: rgb(4 168 235 / var(--tw-text-opacity));
 }
 
+.hover\:text-\[\#20b2aa\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(32 178 170 / var(--tw-text-opacity));
+}
+
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1995,6 +2000,11 @@ input[type="submit"]:hover {
 .active\:text-\[\#04a8eb\]:active {
   --tw-text-opacity: 1;
   color: rgb(4 168 235 / var(--tw-text-opacity));
+}
+
+.active\:text-\[\#20b2aa\]:active {
+  --tw-text-opacity: 1;
+  color: rgb(32 178 170 / var(--tw-text-opacity));
 }
 
 .group:hover .group-hover\:scale-110 {
